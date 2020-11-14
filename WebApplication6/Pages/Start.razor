@@ -1,5 +1,7 @@
 ﻿@page "/start"
 @using WebApplication6.Pages
+@inject Summ Sum
+
 <h3>Start</h3>
 
 <ul>
@@ -11,6 +13,8 @@
     <li></li>
     <li>@Retu().p</li>
     <li>@Retu().ye</li>
+    <li></li>
+    <li>@Sum.Summa(Cor, Cor1)</li>
 </ul>
 @code {
     (int, string) cor = (3, "bulka");
