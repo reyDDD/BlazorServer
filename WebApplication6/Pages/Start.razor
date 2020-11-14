@@ -1,4 +1,5 @@
 ﻿@page "/start"
+@page "/start/{herac:int}"
 @using WebApplication6.Pages
 @inject Summ Sum
 
@@ -15,8 +16,14 @@
     <li>@Retu().ye</li>
     <li></li>
     <li>@Sum.Summa(Cor, Cor1)</li>
+    <li></li>
+    <li>@Herac</li>
 </ul>
 @code {
+
+    [Parameter]
+    public int Herac { get; set; }
+
     (int, string) cor = (3, "bulka");
     (int o, string t) cc = (o: 33, t: "ds");
 
