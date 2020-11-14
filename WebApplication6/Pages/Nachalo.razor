@@ -1,6 +1,23 @@
 ﻿@page "/na" 
  <h3>Nachalo</h3>
 
-@code {
+<p>список</p>
+<ul>
+    @foreach (var item in list)
+    {
+        <li>@item</li>
+    }
+</ul>
 
+<input type="text" @bind="In" @onblur="@(() =>Add())" />
+
+@code {
+    public string In { get; set; }
+    IList<string> list = new List<string>();
+
+    private void Add()
+    {
+        list.Add(In);
+        In = null;
+    }
 }
