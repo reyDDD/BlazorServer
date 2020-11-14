@@ -2,6 +2,35 @@
 @using WebApplication6.Pages
 <h3>Start</h3>
 
+<ul>
+    <li>@Cor</li>
+    <li>@Teg</li>
+    <li></li>
+    <li>@Cor1</li>
+    <li>@Teg1</li>
+    <li></li>
+    <li>@Retu().p</li>
+    <li>@Retu().ye</li>
+</ul>
 @code {
+    (int, string) cor = (3, "bulka");
+    (int o, string t) cc = (o: 33, t: "ds");
 
+    public int Cor { get; set; }
+    public string Teg { get; set; }
+    public int Cor1 { get; set; }
+    public string Teg1 { get; set; }
+
+    protected override void OnInitialized()
+    {
+        Cor = cor.Item1;
+        Teg = cor.Item2;
+        Cor1 = cc.o;
+        Teg1 = cc.t;
+    }
+
+    private (int p, string ye) Retu()
+    {
+        return (p: 33, ye: "poletit");
+    }
 }
